@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Nueva Nota:</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="anyadirNotaNueva()">
+        Guardar
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!--<ion-item>
+      <ion-label fixed>Fecha:</ion-label>
+      <ion-input type="text" [(ngModel)]="fecha_html"></ion-input>
+    </ion-item>-->
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime displayFormat="DD/M/YYYY" pickerFormat="DD/M/YYYY"[(ngModel)]="fecha_html"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Title:</ion-label>
+      <ion-input type="text" [(ngModel)]="title_html"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Description: </ion-label>
+      <ion-textarea type="text" [(ngModel)]="description_html"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

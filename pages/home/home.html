@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Notas</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="irCrearNota()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+<ion-item-sliding *ngFor="let nota of notas" >
+    <ion-item>
+      <ion-badge item-start class="fecha">
+        <h2>{{ formatearFecha(nota) }}</h2>
+      </ion-badge>
+      <h2>{{ nota.title }}</h2>
+      <p>{{ nota.description }}</p>
+      <button ion-button clear item-end (click)="irNotasDetalles(nota)">Editar</button>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="eliminarNota(nota)">
+        <ion-icon name="trash"></ion-icon>
+        Eliminar
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</ion-content>
